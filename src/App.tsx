@@ -120,7 +120,11 @@ const App = () => {
                     onFocus={(e) => e.target.select()}
                 />
             </div>
-            {/* Tips: use Windows Key + . or Command + Control + Spacebar  */}
+            <div className="tips">
+                <div className="tip"><span>Tip:</span> Use Windows Key + . or Command + Control + Spacebar to open the native emoji selector</div>
+                <div className="tip"><span>Tip:</span> You can also use custom emojis, but keep in mind that uses more characters so if you don't have nitro you might not be able to use more than 5 character text</div>
+                <div className="tip"><span>Tip:</span> To get the custom emoji ID, you need to send an emoji with "\" right before. ex: send "\😍" and copy all the text</div>
+            </div>
         </div>
     );
 };
