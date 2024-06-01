@@ -65,6 +65,7 @@ const App = () => {
                 </div>
                 <input
                     type="text"
+                    maxLength={8}
                     value={text}
                     onChange={filterText}
                 />
