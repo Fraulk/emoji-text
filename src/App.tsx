@@ -34,20 +34,6 @@ const App = () => {
         <>
             <div>
                 <div className="emojified-text">
-                    {/* {splittedText.map((letter: any, i) =>
-                        letters[letter as Letter].map((row: any, j: number) => (
-                            <>
-                                <div key={j}>
-                                    {row.map((col: any, k: number) => (
-                                        <span key={k}>{emojis[col]}</span>
-                                    ))}
-                                    {i < splittedText.length - 1 && (
-                                        <span>{emojis[0]}</span>
-                                    )}
-                                </div>
-                            </>
-                        ))
-                    )} */}
                     {/* 5 is the letter height */}
                     {[...Array(5)].map((_, i) => (
                         <div key={i}>
