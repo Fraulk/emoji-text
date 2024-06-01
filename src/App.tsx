@@ -21,7 +21,7 @@ const App = () => {
 
     const filterEmoji = (e: any) => {
         const value = e.target.value;
-        if (value.match(/[^^\p{Emoji}]/u)) return;
+        if (value.match(/[^^\p{Emoji}]/u) && value != "❤️") return;
         // if (value.length > 1) return;
         setEmojis((emojis) => {
             const newEmojis = [...emojis];
