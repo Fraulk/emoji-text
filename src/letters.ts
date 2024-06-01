@@ -206,6 +206,14 @@ const z = [
     [1, 1, 1, 1]
 ]
 
+export const space = [
+    [0, 0, 0, 0],
+    [0, 0, 0, 0],
+    [0, 0, 0, 0],
+    [0, 0, 0, 0],
+    [0, 0, 0, 0]
+]
+
 export const letters = {
     a,
     b,
@@ -232,5 +240,6 @@ export const letters = {
     w,
     x,
     y,
-    z
+    z,
+    space
 }

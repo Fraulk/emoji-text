@@ -15,8 +15,8 @@ const App = () => {
 
     const filterText = (e: any) => {
         const value = e.target.value;
-        if (value.match(/[^a-z]/)) return;
-        setText(value);
+        if (value.match(/[^a-zA-Z ]/)) return;
+        setText(value.toLowerCase());
     }
 
     const filterEmoji = (e: any) => {
@@ -51,15 +51,17 @@ const App = () => {
                     {/* 5 is the letter height */}
                     {[...Array(5)].map((_, i) => (
                         <div key={i}>
-                            {splittedText.map((letter: any, j) =>
+                            {splittedText.map((lett: any, j) => {
                                 // 4 is the letter width
-                                [...Array(4)].map((_, k) => (
+                                let letter = lett;
+                                if (letter == " ") letter = "space";
+                                return [...Array(4)].map((_, k) => (
                                     <span key={k}>
                                         {emojis[letters[letter as Letter][i][k]]}
-                                        {k == 3 && j < splittedText.length - 1 ? emojis[0]: null}
+                                        {k == 3 && j < splittedText.length - 1 ? emojis[0] : null}
                                     </span>
-                                ))
-                            )}
+                                ));
+                            })}
                         </div>
                     ))}
                 </div>
