@@ -29,35 +29,15 @@ const App = () => {
 
     const filterEmoji = (e: any) => {
         const value = e.target.value;
-        if (value.match(/[^^\p{Emoji}]/u) && value != "❤️") return;
-        // if (value.length > 1) return;
+        // too much emojis that doesn't pass the regex...
+        // if (value.match(/[^^\p{Emoji}]/u) && value != "❤️") return;
         setEmojis((emojis) => {
             const newEmojis = [...emojis];
-            newEmojis[parseInt(e.target.name)] = value;
+            newEmojis[+e.target.name] = value;
             return newEmojis;
         });
     };
 
-    const copyEmojiText = () => {
-        const text = document.createElement("textarea");
-        text.value = splittedText.map((lett: any) => {
-            let letter = lett;
-            if (letter == " ") letter = "space";
-            return letters[letter as Letter]
-                .map((row) => row.map((cell) => emojis[cell]).join(""))
-                .join("");
-        }).join("\n\n");
-        document.body.appendChild(text);
-        text.select();
-        document.execCommand("copy");
-        document.body.removeChild(text);
-        setHasCopied(true)
-        setTimeout(() => {
-            setHasCopied(false)
-        }, 1000)
-    }
-
-    // thanks SO
     const copyToClipboard = () => {
         if (hasCopied) return;
         setHasCopied(true)
@@ -129,6 +109,7 @@ const App = () => {
                     className="text-input emoji-input"
                     value={emojis[1]}
                     onChange={filterEmoji}
+                    onFocus={(e) => e.target.select()}
                 />
                 <input
                     type="text"
@@ -136,6 +117,7 @@ const App = () => {
                     className="text-input emoji-input"
                     value={emojis[0]}
                     onChange={filterEmoji}
+                    onFocus={(e) => e.target.select()}
                 />
             </div>
             {/* Tips: use Windows Key + . or Command + Control + Spacebar  */}
