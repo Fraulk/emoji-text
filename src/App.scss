@@ -1,0 +1,136 @@
+#root {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+.app {
+    min-width: 50vw;
+    display: flex;
+    flex-flow: column nowrap;
+    background-color: #313338;
+    border-radius: 4px;
+}
+
+.date-separator::before, .date-separator::after {
+    content: '';
+    display: block;
+    width: 42%;
+    height: 1px;
+    background-color: #3f4147;
+    margin: 1rem 0;
+}
+
+.date-separator {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    color: #8d939c;
+    font-weight: 700;
+}
+
+.emojified-text {
+    margin: .25rem;
+}
+
+.inputs {
+    display: flex;
+    gap: 1rem;
+    margin: 1rem;
+
+    .text-input {
+        // all: unset;
+        width: 100%;
+        padding: 0.5rem 1rem;
+        font-size: 1.5rem;
+        outline: none;
+        border: none;
+        border-radius: 8px;
+        background-color: #383a40;
+    
+    }
+    
+    .emoji-input {
+        font-size: 1.25rem;
+        width: 26px;
+    }
+}
+
+.text-input::placeholder {
+    color: #6a6b75;
+}
+
+.gvp__guesses__item {
+    position: relative;
+    padding: .5rem 1rem;
+    padding-bottom: 0;
+    display: flex;
+    gap: .75rem;
+
+    &:hover {
+        background-color: #2e3035;
+    }
+
+    &:hover .actions-bar {
+        display: flex;
+    }
+
+    .actions-bar {
+        width: 34px;
+        height: 34px;
+        display: none;
+        justify-content: center;
+        align-items: center;
+        position: absolute;
+        top: -1rem;
+        right: .75rem;
+        background-color: #2e3035;
+        border-radius: 4px;
+        border: 1px solid rgba(0, 0, 0, 0.153);
+        cursor: pointer;
+        transition: box-shadow .1s ease-out;
+    }
+
+    .actions-bar:hover {
+        background-color: #393c41;
+        box-shadow: 0 6px 5px -2px #00000041;
+        font-size: .75rem;
+    }
+
+    .actions-bar:hover .action-help {
+        display: block;
+    }
+
+    .action-help {
+        display: none;
+        position: absolute;
+        top: -2.5rem;
+        left: -30%;
+        background-color: #111214;
+        padding: .25rem .5rem;
+        padding-bottom: .4rem;
+        border-radius: 5px;
+        font-size: 1rem;
+        animation: slideIn .1s ease-out;
+    }
+
+    img {
+        width: 2.5rem;
+        height: 2.5rem;
+        border-radius: 100%;
+        user-select: none;
+    }
+
+    .gvp__guesses__item__name {
+        font-weight: 600;
+    }
+}
+
+@keyframes slideIn {
+    from {
+        top: -2.35rem;
+    }
+    to {
+        top: -2.5rem;
+    }
+}
