@@ -145,6 +145,40 @@
     }
 }
 
+.socials {
+    margin-top: 1rem;
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+
+    .socials__item {
+        width: 34px;
+        height: 34px;
+        padding: .25rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+        border-radius: 4px;
+        transition: box-shadow .1s ease-out, background-color .1s ease-out;
+        color: #8d939c;
+    }
+
+    .socials__item:hover {
+        background-color: #393c41;
+        box-shadow: 0 6px 5px -2px #00000041;
+
+        &.twitter {
+            color: #1da1f2;
+        }
+
+        &.github {
+            color: #6e5494;
+        }
+    }
+
+}
+
 @keyframes slideIn {
     from {
         top: -2.35rem;
