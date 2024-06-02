@@ -69,10 +69,12 @@ const App = () => {
                                             // 4 is the letter width
                                             let letter = lett;
                                             if (letter == " ") letter = "space";
-                                            return [...Array(4)].map((_, k) => (
+                                            const letterWidth = letters[letter as Letter][0].length;
+                                            const spacePos = letterWidth == 5 ? 4 : 3;
+                                            return [...Array(letterWidth)].map((_, k) => (
                                                 <span key={k}>
                                                     {emojis[letters[letter as Letter][i][k]]}
-                                                    {k == 3 && j < splittedText.length - 1
+                                                    {k == spacePos && j < splittedText.length - 1
                                                         ? emojis[0]
                                                         : null}
                                                 </span>
