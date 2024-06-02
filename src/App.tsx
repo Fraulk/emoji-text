@@ -70,7 +70,7 @@ const App = () => {
                                             let letter = lett;
                                             if (letter == " ") letter = "space";
                                             const letterWidth = letters[letter as Letter][0].length;
-                                            const spacePos = letterWidth == 5 ? 4 : 3;
+                                            const spacePos = letterWidth - 1;
                                             return [...Array(letterWidth)].map((_, k) => (
                                                 <span key={k}>
                                                     {emojis[letters[letter as Letter][i][k]]}
